@@ -11,14 +11,12 @@ public class Main {
 
             if (answer.equals("0")) {
                 System.out.println("");
-                System.out.println("「戦争」ゲームスタート!");
                 // 戦争ゲームの開始
                 War war = new War();
                 war.play();
                 break;
             } else if (answer.equals("1")) {
                 System.out.println("");
-                System.out.println("「ブラックジャック」ゲームスタート!");
                 // 「ブラックジャック」ゲームの開始
                 Blackjack blackjack = new Blackjack();
                 blackjack.play();

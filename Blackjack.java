@@ -37,7 +37,7 @@ public class Blackjack extends CardGame {
     public void play() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("ゲームスタート!");
+        System.out.println("「ブラックジャック」ゲームスタート!");
         System.out.println("ディーラーのオープンカードは " + dealer[0] + " です。");
         System.out.println("");
 
