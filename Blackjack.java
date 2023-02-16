@@ -36,6 +36,7 @@ public class Blackjack extends CardGame {
             System.out.println(playerDeck.get(1) + " : " + cardScore(playerDeck.get(1).number));
             playerScore += addScore;
 
+            // 追加したカードの文字列表示
             if (turn >= 1) {
                 addCard("player");
                 for (int i = 2; i <= turn + 1; i++) {
@@ -56,6 +57,7 @@ public class Blackjack extends CardGame {
                 break;
             }
 
+            // カード追加の選択
             while (true) {
                 System.out.print("カードを追加（ヒット）しますか?(y|n) ");
                 String answer = scan.nextLine();
@@ -78,13 +80,16 @@ public class Blackjack extends CardGame {
 
     // カード追加
     private void addCard(String distributed) {
+        // playerのみカード追加
         if (distributed.equals("player")) {
             playerDeck.add(deck[addCardTimes]);
             addCardTimes += 1;
         } else if (distributed.equals("dealer")) {
+            // ディーラーのみ追加
             dealerDeck.add(deck[addCardTimes]);
             addCardTimes += 1;
         } else if (distributed.equals("both")) {
+            // 両方のカード追加
             playerDeck.add(deck[addCardTimes]);
             addCardTimes += 1;
             dealerDeck.add(deck[addCardTimes]);
@@ -92,6 +97,7 @@ public class Blackjack extends CardGame {
         }
     }
 
+    // カードの得点定義
     private String cardScore(int number) {
         if (number >= 2 && number <= 9) {
             addScore = number;
@@ -126,6 +132,7 @@ public class Blackjack extends CardGame {
         System.out.println(dealerDeck.get(1) + " : " + cardScore(dealerDeck.get(1).number));
         dealerScore += addScore;
 
+        // ディーラーの得点が17点を越えるまでカード追加
         if (dealerScore < 17) {
             for (int i = 2; i < deck.length; i++) {
                 addCard("dealer");
