@@ -14,6 +14,7 @@ public class War extends CardGame {
         System.arraycopy(deck, 26, playerDeck2, 0, 26);
     }
 
+    @Override
     public void play() {
 
         Scanner scan = new Scanner(System.in);
