@@ -9,17 +9,21 @@ public class Main {
             System.out.println("0: 戦争、1: ブラックジャック");
             String answer = scan.nextLine();
 
+            CardGame game = null;
+
             if (answer.equals("0")) {
                 System.out.println("");
                 // 戦争ゲームの開始
-                War war = new War();
-                war.play();
-                break;
+                game = new War();
+
             } else if (answer.equals("1")) {
                 System.out.println("");
                 // 「ブラックジャック」ゲームの開始
-                Blackjack blackjack = new Blackjack();
-                blackjack.play();
+                game = new Blackjack();
+
+            }
+            if (game != null) {
+                game.play();
                 break;
             }
         }
