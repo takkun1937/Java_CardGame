@@ -8,7 +8,6 @@ public class Main {
             System.out.println("遊ぶゲームを選択して下さい。");
             System.out.println("0: 戦争、1: ブラックジャック");
             String gameAnswer = scan.nextLine();
-
             CardGame game = null;
 
             if (gameAnswer.equals("0")) {

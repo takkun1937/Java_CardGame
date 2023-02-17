@@ -19,6 +19,7 @@ public class Blackjack extends CardGame {
     }
 
     // playメソッド
+    @Override
     public void play() {
         Scanner scan = new Scanner(System.in);
 
