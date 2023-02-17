@@ -7,16 +7,16 @@ public class Main {
         while (true) {
             System.out.println("遊ぶゲームを選択して下さい。");
             System.out.println("0: 戦争、1: ブラックジャック");
-            String answer = scan.nextLine();
+            String gameAnswer = scan.nextLine();
 
             CardGame game = null;
 
-            if (answer.equals("0")) {
+            if (gameAnswer.equals("0")) {
                 System.out.println("");
                 // 戦争ゲームの開始
                 game = new War();
 
-            } else if (answer.equals("1")) {
+            } else if (gameAnswer.equals("1")) {
                 System.out.println("");
                 // 「ブラックジャック」ゲームの開始
                 game = new Blackjack();
