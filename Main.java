@@ -15,19 +15,15 @@ public class Main {
                     System.out.println("");
                     // 戦争ゲームの開始
                     game = new War();
-
                 } else if (gameAnswer.equals("1")) {
                     System.out.println("");
                     // 「ブラックジャック」ゲームの開始
                     game = new Blackjack();
-
                 }
                 if (game != null) {
                     game.play();
                     break;
-
                 }
-
             }
         } else if (args[0].equals("--help")) {
             while (true) {
@@ -53,7 +49,6 @@ public class Main {
                 }
             }
         }
-
         scan.close();
     }
 }
