@@ -1,4 +1,8 @@
 import java.util.Scanner;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,25 +30,25 @@ public class Main {
                 }
             }
         } else if (args[0].equals("--help")) {
+            Path path = null;
             while (true) {
                 System.out.println("ヘルプを表示するゲームを選択して下さい。");
                 System.out.println("0: 戦争、1: ブラックジャック");
                 String helpAnswer = scan.nextLine();
 
                 if (helpAnswer.equals("0")) {
-                    System.out.println("");
-                    System.out.println("ゲームが始まったらEnterボタンで進めて下さい。");
-                    System.out.println("表示されたカードの数字が大きい方に２点入ります。");
-                    System.out.println("引き分けの場合はどちらにも点は入らず、次のターンの勝者に４点入ります。");
-                    System.out.println("最後に合計点数の高い方が勝者です。");
-                    break;
+                    path = Paths.get("War.txt");
                 } else if (helpAnswer.equals("1")) {
+                    path = Paths.get("Blackjack.txt");
+                }
+                if (path != null) {
                     System.out.println("");
-                    System.out.println("カードの数字の合計点数が21点に近い人が勝者です。");
-                    System.out.println("しかし、21点を超えた瞬間負けとなります。");
-                    System.out.println("最初に2枚のカードが表示されカードを追加するか選択します。");
-                    System.out.println("yでカードを追加し、勝負できると判断したらnを押して下さい。");
-                    System.out.println("21点以下かつ21点に近い方の勝利となります。");
+                    try {
+                        String content = Files.readString(path);
+                        System.out.println(content);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
                     break;
                 }
             }
