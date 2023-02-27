@@ -14,6 +14,7 @@ public class War extends CardGame {
         System.arraycopy(deck, 26, playerDeck2, 0, 26);
     }
 
+    @Override
     public void play() {
 
         Scanner scan = new Scanner(System.in);
@@ -23,7 +24,7 @@ public class War extends CardGame {
         int playerScore2 = 0;
         int point = 2;
 
-        System.out.println("ゲームスタート!");
+        System.out.println("「戦争」ゲームスタート!");
 
         // ゲーム開始
         for (int times = 0; times < playerDeck1.length; times++) {
