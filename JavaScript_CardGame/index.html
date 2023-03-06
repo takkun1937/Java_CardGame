@@ -8,6 +8,7 @@
     <title>CardGame</title>
   </head>
   <body>
+    <button id="reload">戻る</button>
     <div id="select">
       <h2 id="select-mode">あなたが選んでいるモードは</h2>
       <button id="btn-mode">Play</button>
@@ -18,8 +19,33 @@
       </div>
     </div>
 
+    <div id="war-container">
+      <h2 id="war-enemyScore">相手: 0</h2>
+      <h2 id="war-enemyCard"></h2>
+      <h1 id="war-text">カードを引いて下さい。</h1>
+      <h2 id="war-playerCard"></h2>
+      <h2 id="war-playerScore">あなた : 0</h2>
+      <button id="btn-add">カードを引く</button>
+    </div>
+
+    <div id="blackjack-container">
+      <h2 id="blackjack-dealerScore">Dealer :</h2>
+      <h2 id="blackjack-dealerCard"></h2>
+      <h1 id="blackjack-text">カードを追加(Hit)しますか？</h1>
+      <h2 id="blackjack-playerCard"></h2>
+      <h2 id="blackjack-playerScore">Player : 0</h2>
+      <div id="blackjack-btn">
+        <button id="btn-hit">Hit</button>
+        <button id="btn-stay">Stay</button>
+      </div>
+    </div>
+
     <div id="help-text"></div>
 
     <script src="main.js"></script>
+    <script src="card.js"></script>
+    <script src="cardGame.js"></script>
+    <script src="war.js"></script>
+    <script src="blackjack.js"></script>
   </body>
 </html>

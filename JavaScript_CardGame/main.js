@@ -1,39 +1,57 @@
+const btnReload = document.getElementById("reload");
 const btnMode = document.getElementById("btn-mode");
 const btnWar = document.getElementById("btn-war");
 const btnBlackjack = document.getElementById("btn-blackjack");
 
+//playとhelpモード選択フィールド
 let playMode = true;
 
+//リロード
+btnReload.addEventListener("click", function () {
+  location.reload();
+});
+
+//モード選択
 btnMode.addEventListener("click", function () {
   if (playMode) {
     btnMode.innerHTML = "Help";
   } else {
     btnMode.innerHTML = "Play";
   }
-  // 変数の値を切り替える
   playMode = !playMode;
 });
 
+//戦争ボタンクリック
 btnWar.addEventListener("click", function () {
   document.getElementById("select").style.display = "none";
-  document.getElementById("help-text").style.display = "block";
+  //playモード
   if (playMode) {
-    btnWar.innerHTML = "戦争を開始";
-  } else {
+    document.getElementById("war-container").style.display = "flex";
+    const war = new War();
+  }
+  //ヘルプ表示
+  else {
+    document.getElementById("help-text").style.display = "flex";
     helpGame("war");
   }
 });
 
+//ブラックジャックボタンクリック
 btnBlackjack.addEventListener("click", function () {
   document.getElementById("select").style.display = "none";
-  document.getElementById("help-text").style.display = "block";
+  //playモード
   if (playMode) {
-    btnBlackjack.innerHTML = "ブラックジャックを開始";
-  } else {
+    document.getElementById("blackjack-container").style.display = "flex";
+    const blackjack = new Blackjack();
+  }
+  //ヘルプ表示
+  else {
+    document.getElementById("help-text").style.display = "flex";
     helpGame("blackjack");
   }
 });
 
+//helpテキスト表示
 function helpGame(gameName) {
   switch (gameName) {
     case "war": {

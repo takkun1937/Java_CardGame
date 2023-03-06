@@ -12,11 +12,26 @@ button {
   font-size: 1.2em;
 }
 
+#war-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#blackjack-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
 #help-text {
   display: none;
-  position: absolute;
-  width: 100vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
