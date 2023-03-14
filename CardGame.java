@@ -3,7 +3,7 @@ import java.util.Random;
 public abstract class CardGame {
 
     // デッキの枚数
-    private boolean hasJoker = true;
+    public boolean hasJoker = true;
 
     protected Card[] deck = new Card[53];
 
@@ -13,6 +13,8 @@ public abstract class CardGame {
         this.deck = new Card[num];
         shuffle();
     }
+
+    public abstract void play();
 
     protected void shuffle() {
 
