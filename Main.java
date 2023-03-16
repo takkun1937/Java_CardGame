@@ -1,7 +1,32 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // 「ブラックジャック」ゲームの開始
-        Blackjack blackjack = new Blackjack();
-        blackjack.play();
+        Scanner scan = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("遊ぶゲームを選択して下さい。");
+            System.out.println("0: 戦争、1: ブラックジャック");
+            String gameAnswer = scan.nextLine();
+            CardGame game = null;
+
+            if (gameAnswer.equals("0")) {
+                System.out.println("");
+                // 戦争ゲームの開始
+                game = new War();
+
+            } else if (gameAnswer.equals("1")) {
+                System.out.println("");
+                // 「ブラックジャック」ゲームの開始
+                game = new Blackjack();
+
+            }
+            if (game != null) {
+                game.play();
+                break;
+            }
+        }
+
+        scan.close();
     }
 }

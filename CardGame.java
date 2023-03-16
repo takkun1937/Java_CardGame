@@ -14,6 +14,8 @@ public abstract class CardGame {
         shuffle();
     }
 
+    public abstract void play();
+
     protected void shuffle() {
 
         for (int i = 0; i < deck.length; i++) {
