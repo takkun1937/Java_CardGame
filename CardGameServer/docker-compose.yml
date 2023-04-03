@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  card_game_server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    # entrypoint: "bash -c '/home/stone/CardGameServer/gradlew bootRun'"
+    container_name: card_game_server
+    ports:
+      - 8080:8080
+    tty: true
+    # user: stone
+    volumes:
+      - .:/home/stone/CardGameServer
+    working_dir: /home/stone/CardGameServer
