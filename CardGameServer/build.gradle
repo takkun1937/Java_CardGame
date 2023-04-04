@@ -19,6 +19,9 @@ dependencies {
   implementation 'mysql:mysql-connector-java:8.0.27'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
   implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+   implementation 'org.springframework:spring-web:5.3.12'
+   implementation 'org.springframework:spring-webmvc:5.3.12'
 }
 tasks.named('test') {
 	useJUnitPlatform()
