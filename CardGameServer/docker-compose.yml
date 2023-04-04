@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    # entrypoint: "bash -c '/home/stone/CardGameServer/gradlew bootRun'"
+    entrypoint: "bash -c '/home/stone/CardGameServer/gradlew bootRun'"
     container_name: card_game_server
     ports:
       - 8080:8080
