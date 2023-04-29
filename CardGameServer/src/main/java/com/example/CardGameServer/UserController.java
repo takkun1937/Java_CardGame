@@ -1,12 +1,17 @@
 package com.example.CardGameServer;
 
+//import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.bind.annotation.RequestParam;
 
-//import com.example.CardGameServer.UserForm;
-//import com.example.CardGameServer.UserService;
+import ch.qos.logback.core.model.Model;
+import jakarta.validation.Valid;
 
 @Controller
 public class UserController {
@@ -14,24 +19,40 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/user/registerLogin")
-    public String showRegisterLogin() {
-        return "user/registerLogin";
+    // @Autowired
+    // private UserRepository userRepository;
+
+    @GetMapping("/top")
+    public String showTop(@ModelAttribute("user") User user, Model model) {
+        // userRepository.addAttribute("users", userRepository.findAll());
+        return "top";
     }
 
-    @PostMapping("/user/registerLogin")
-    public String register(UserForm userForm) {
+    @GetMapping("/login")
+    public String showLogin() {
+        return "login";
+    }
+
+    @GetMapping("/register")
+    public String showRegister(@ModelAttribute("form") UserForm userForm) {
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String register(@Valid @ModelAttribute("form") UserForm userForm, BindingResult result) {
+        if (result.hasErrors()) {
+            return "register";
+        }
         userService.register(userForm.getUsername(), userForm.getPassword());
-        return "redirect:/user/top";
+        return "redirect:/login";
     }
 
-    @PostMapping("/login")
-    public String showLoginPage() {
-        return "redirect:/user/top";
-    }
+    // @PostMapping("/search")
+    // public String search(@RequestParam("username") String username, Model model)
+    // {
+    // User user = userRepository.findByUsername(username);
+    // model.addAttribute("users", user);
+    // return "top";
+    // }
 
-    @GetMapping("/user/top")
-    public String showTopPage() {
-        return "user/top";
-    }
 }

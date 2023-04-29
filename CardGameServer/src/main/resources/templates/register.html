@@ -2,7 +2,7 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" th:href="@{/css/registerLogin.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
     <title>User Register</title>
   </head>
 
@@ -10,7 +10,7 @@
     <main class="main">
       <form
         class="form"
-        th:action="@{/user/registerLogin}"
+        th:action="@{/register}"
         method="post"
         th:object="${form}"
       >
@@ -63,13 +63,9 @@
           />
         </p>
         <p class="form__item">
-          <input type="submit" value="新規登録" />
+          <input type="submit" value="User Registration" />
         </p>
-      </form>
-      <form method="post" th:action="@{/login}">
-        <p class="form__item">
-          <input type="submit" value="ログイン画面へ" />
-        </p>
+        <a href="/login" class="to-register">User Login</a>
       </form>
     </main>
   </body>

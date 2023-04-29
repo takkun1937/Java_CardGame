@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Top Page</title>
+  </head>
+  <body>
+    <main class="main">
+      <form class="form" th:action="@{/search}" method="post">
+        <h1 class="form__title">検索用フォーム</h1>
+        <p class="form__item">
+          <input
+            type="text"
+            placeholder="ユーザー名を入力して下さい"
+            name="username"
+          />
+        </p>
+        <p class="form__item">
+          <input type="submit" value="検索" />
+        </p>
+      </form>
+    </main>
+
+    <!-- <ul th:each="user:${users}">
+      <li>
+        [[${user.id}]] - [[${user.name}]] - [[${user.password}]] -
+        [[${user.age}]]
+      </li>
+      <li>
+        <form th:action="@{/delete/{id}(id=${user.id})}" th:method="delete">
+          <input type="submit" value="削除" />
+        </form>
+      </li>
+    </ul>
+
+    <a href="/add">新規作成</a> -->
+  </body>
+</html>
